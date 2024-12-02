@@ -9,5 +9,8 @@
     "averagePrice" : "متوسط السعر",
     "numberOfReturns" : "عدد المرتجعات",
     "date" : "التاريخ",
-    "numberOfOrders" : "عدد الطلبات"
+    "numberOfOrders" : "عدد الطلبات",
+    "changeLanguage" : "تغيير اللغة",
+    "english" : "الإنجليزية",
+    "arabic" : "العربية"
 }

@@ -9,5 +9,8 @@
     "averagePrice" : "Average Price",
     "numberOfReturns" : "Number of Returns",
     "date" : "Date",
-    "numberOfOrders" : "Number of Orders"
+    "numberOfOrders" : "Number of Orders",
+    "arabic" : "Arabic",
+    "english" : "English",
+    "changeLanguage" : "Change Language"
 }

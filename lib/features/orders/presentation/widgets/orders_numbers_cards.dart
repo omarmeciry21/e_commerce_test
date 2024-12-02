@@ -1,5 +1,6 @@
 import 'package:e_commerce_test/core/utils/app_box_shadows.dart';
 import 'package:e_commerce_test/features/orders/data/models/order_models.dart';
+import 'package:e_commerce_test/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
@@ -25,7 +26,7 @@ class OrdersNumbersCards extends StatelessWidget {
           Expanded(
             child: buildSingleCard(
               context,
-              'Total Orders',
+              S.of(context).totalOrders,
               orders.length.toString(),
               Iconsax.box,
             ),
@@ -36,7 +37,7 @@ class OrdersNumbersCards extends StatelessWidget {
           Expanded(
             child: buildSingleCard(
               context,
-              'Average Price',
+              S.of(context).averagePrice,
               '\$$averagePrice',
               Iconsax.dollar_circle,
             ),
@@ -47,7 +48,7 @@ class OrdersNumbersCards extends StatelessWidget {
           Expanded(
             child: buildSingleCard(
               context,
-              'Number of Returns',
+              S.of(context).numberOfReturns,
               orders.where((e) => e.status == "RETURNED").length.toString(),
               Iconsax.truck,
             ),

@@ -17,6 +17,7 @@ class OrdersView extends StatefulWidget {
 }
 
 class _OrdersViewState extends State<OrdersView> {
+  final ScrollController _scrollController = ScrollController();
   @override
   void initState() {
     super.initState();
@@ -27,7 +28,7 @@ class _OrdersViewState extends State<OrdersView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomOrdersAppBar(),
+        appBar: const CustomOrdersAppBar(),
         body: SafeArea(child: BlocBuilder<GetOrdersCubit, GetOrdersState>(
           builder: (context, state) {
             if (state is GetOrdersFailure) {
@@ -39,6 +40,7 @@ class _OrdersViewState extends State<OrdersView> {
             }
             if (state is GetOrdersSuccess) {
               return SingleChildScrollView(
+                controller: _scrollController,
                 child: Column(children: [
                   SizedBox(
                     height: 10.r,
@@ -57,6 +59,7 @@ class _OrdersViewState extends State<OrdersView> {
                   ),
                   ListView.separated(
                       shrinkWrap: true,
+                      controller: _scrollController,
                       itemBuilder: (context, index) {
                         return CustomOrderListTile(
                           order: state.orders[index],

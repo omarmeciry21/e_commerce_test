@@ -34,34 +34,50 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class EcommerceMaterialApp extends StatelessWidget {
+class EcommerceMaterialApp extends StatefulWidget {
   const EcommerceMaterialApp({
     super.key,
   });
 
   @override
+  State<EcommerceMaterialApp> createState() => _EcommerceMaterialAppState();
+}
+
+class _EcommerceMaterialAppState extends State<EcommerceMaterialApp> {
+  @override
+  void initState() {
+    super.initState();
+
+    context.read<LanguageCubit>().getLanguage();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      locale: const Locale("en"),
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      theme: ThemeData(
-          primaryColor: Color(0xffE42C52),
-          scaffoldBackgroundColor: Colors.white,
-          fontFamily: GoogleFonts.raleway().fontFamily),
-      supportedLocales: S.delegate.supportedLocales,
-      builder: (context, child) => MediaQuery(
-        data: MediaQuery.of(context).copyWith(
-          textScaler: const TextScaler.linear(1.0),
-        ),
-        child: child!,
-      ),
-      routerConfig: AppRouter.router,
+    return BlocBuilder<LanguageCubit, LanguageState>(
+      builder: (context, state) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          locale: Locale(context.read<LanguageCubit>().languageCode),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          theme: ThemeData(
+              primaryColor: Color(0xffE42C52),
+              scaffoldBackgroundColor: Colors.white,
+              fontFamily: GoogleFonts.raleway().fontFamily),
+          supportedLocales: S.delegate.supportedLocales,
+          builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              textScaler: const TextScaler.linear(1.0),
+            ),
+            child: child!,
+          ),
+          routerConfig: AppRouter.router,
+        );
+      },
     );
   }
 }

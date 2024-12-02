@@ -22,9 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "averagePrice": MessageLookupByLibrary.simpleMessage("متوسط السعر"),
         "buyer": MessageLookupByLibrary.simpleMessage("المشتري"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
         "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
+        "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "exceptionMessage": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ، يرجى المحاولة مرة أخرى لاحقاً"),
         "networkExceptionMessage": MessageLookupByLibrary.simpleMessage(

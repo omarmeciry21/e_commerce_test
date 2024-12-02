@@ -1,4 +1,5 @@
 import 'package:e_commerce_test/core/utils/app_box_shadows.dart';
+import 'package:e_commerce_test/generated/l10n.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_test/features/orders/data/models/order_models.dart';
@@ -63,9 +64,9 @@ class OrderStatsLineChart extends StatelessWidget {
             show: true,
             leftTitles: AxisTitles(
                 sideTitles: SideTitles(showTitles: true, reservedSize: 32),
-                axisNameWidget: Text("Number of Orders")),
+                axisNameWidget: Text(S.of(context).totalOrders)),
             bottomTitles: AxisTitles(
-              axisNameWidget: Text("Date"),
+              axisNameWidget: Text(S.of(context).date),
               sideTitles: SideTitles(
                 showTitles: true,
                 getTitlesWidget: (value, meta) {
