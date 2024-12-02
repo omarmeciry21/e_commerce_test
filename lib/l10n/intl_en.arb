@@ -1,0 +1,7 @@
+{
+    "networkExceptionMessage": "Network error, please try again later",
+    "exceptionMessage" : "An error occurred, please try again later",
+    "unauthorizedNeedSignInAgain" : "Unauthorized, please sign in again",
+    "retry" : "Retry",
+    "buyer" : "Buyer"
+}
