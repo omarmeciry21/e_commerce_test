@@ -4,16 +4,7 @@
 
 You can view the demo video by clicking the link below:
 
-[Watch the Demo Video](./path_to_video/demo_video.mkv)
-
-Alternatively, you can use the HTML `<video>` tag if your markdown parser allows HTML rendering (e.g., GitHub, GitLab):
-
-<video width="600" controls>
-  <source src="./path_to_video/demo_video.mkv" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
----
+[Watch the Demo Video](./demo_video.mkv)
 
 ## Prerequisites
 
