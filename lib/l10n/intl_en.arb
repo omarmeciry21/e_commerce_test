@@ -3,5 +3,11 @@
     "exceptionMessage" : "An error occurred, please try again later",
     "unauthorizedNeedSignInAgain" : "Unauthorized, please sign in again",
     "retry" : "Retry",
-    "buyer" : "Buyer"
+    "buyer" : "Buyer",
+    "orders" : "Orders",
+    "totalOrders" : "Total Orders",
+    "averagePrice" : "Average Price",
+    "numberOfReturns" : "Number of Returns",
+    "date" : "Date",
+    "numberOfOrders" : "Number of Orders"
 }

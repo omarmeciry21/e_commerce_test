@@ -99,6 +99,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Orders`
+  String get orders {
+    return Intl.message(
+      'Orders',
+      name: 'orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Orders`
+  String get totalOrders {
+    return Intl.message(
+      'Total Orders',
+      name: 'totalOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average Price`
+  String get averagePrice {
+    return Intl.message(
+      'Average Price',
+      name: 'averagePrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Returns`
+  String get numberOfReturns {
+    return Intl.message(
+      'Number of Returns',
+      name: 'numberOfReturns',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Orders`
+  String get numberOfOrders {
+    return Intl.message(
+      'Number of Orders',
+      name: 'numberOfOrders',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -107,6 +167,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

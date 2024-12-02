@@ -1,0 +1,13 @@
+{
+    "networkExceptionMessage": "خطأ في الشبكة، يرجى المحاولة مرة أخرى لاحقاً",
+    "exceptionMessage" : "حدث خطأ، يرجى المحاولة مرة أخرى لاحقاً",
+    "unauthorizedNeedSignInAgain" : "غير مصرح، يرجى تسجيل الدخول مرة أخرى",
+    "retry" : "إعادة المحاولة",
+    "buyer" : "المشتري",
+    "orders" : "الطلبات",
+    "totalOrders" : "إجمالي الطلبات",
+    "averagePrice" : "متوسط السعر",
+    "numberOfReturns" : "عدد المرتجعات",
+    "date" : "التاريخ",
+    "numberOfOrders" : "عدد الطلبات"
+}

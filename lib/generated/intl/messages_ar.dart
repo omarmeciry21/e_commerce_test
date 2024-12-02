@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a ar locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,25 +18,24 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "averagePrice": MessageLookupByLibrary.simpleMessage("Average Price"),
-        "buyer": MessageLookupByLibrary.simpleMessage("Buyer"),
-        "date": MessageLookupByLibrary.simpleMessage("Date"),
+        "averagePrice": MessageLookupByLibrary.simpleMessage("متوسط السعر"),
+        "buyer": MessageLookupByLibrary.simpleMessage("المشتري"),
+        "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
         "exceptionMessage": MessageLookupByLibrary.simpleMessage(
-            "An error occurred, please try again later"),
+            "حدث خطأ، يرجى المحاولة مرة أخرى لاحقاً"),
         "networkExceptionMessage": MessageLookupByLibrary.simpleMessage(
-            "Network error, please try again later"),
-        "numberOfOrders":
-            MessageLookupByLibrary.simpleMessage("Number of Orders"),
+            "خطأ في الشبكة، يرجى المحاولة مرة أخرى لاحقاً"),
+        "numberOfOrders": MessageLookupByLibrary.simpleMessage("عدد الطلبات"),
         "numberOfReturns":
-            MessageLookupByLibrary.simpleMessage("Number of Returns"),
-        "orders": MessageLookupByLibrary.simpleMessage("Orders"),
-        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
-        "totalOrders": MessageLookupByLibrary.simpleMessage("Total Orders"),
+            MessageLookupByLibrary.simpleMessage("عدد المرتجعات"),
+        "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
+        "retry": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
+        "totalOrders": MessageLookupByLibrary.simpleMessage("إجمالي الطلبات"),
         "unauthorizedNeedSignInAgain": MessageLookupByLibrary.simpleMessage(
-            "Unauthorized, please sign in again")
+            "غير مصرح، يرجى تسجيل الدخول مرة أخرى")
       };
 }

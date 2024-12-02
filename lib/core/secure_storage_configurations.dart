@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 
 class SecureStorageConfigurations {
   static const String _tokenKey = 'user_token';
+  static const String _languageKey = 'language';
 
   static AndroidOptions _getAndroidOptions() => const AndroidOptions(
         encryptedSharedPreferences: true,
@@ -23,5 +24,17 @@ class SecureStorageConfigurations {
   static Future<void> clearUserToken() async {
     await _storage.delete(key: _tokenKey);
     // await clearBiometricsToken();
+  }
+
+  static Future<void> saveLanguage(String language) async {
+    await _storage.write(key: _languageKey, value: language);
+  }
+
+  static Future<String?> getLanguage() async {
+    return await _storage.read(key: _languageKey);
+  }
+
+  static Future<void> clearLanguage() async {
+    await _storage.delete(key: _languageKey);
   }
 }

@@ -1,7 +1,9 @@
+import 'package:e_commerce_test/core/cubit/language_cubit.dart';
 import 'package:e_commerce_test/core/routing/app_router.dart';
 import 'package:e_commerce_test/core/service_locator.dart';
 import 'package:e_commerce_test/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,27 +26,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        locale: const Locale("en"),
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        theme: ThemeData(
-            primaryColor: Color(0xffE42C52),
-            fontFamily: GoogleFonts.raleway().fontFamily),
-        supportedLocales: S.delegate.supportedLocales,
-        builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(
-            textScaler: const TextScaler.linear(1.0),
-          ),
-          child: child!,
-        ),
-        routerConfig: AppRouter.router,
+      child: BlocProvider(
+        create: (context) => LanguageCubit(),
+        child: EcommerceMaterialApp(),
       ),
+    );
+  }
+}
+
+class EcommerceMaterialApp extends StatelessWidget {
+  const EcommerceMaterialApp({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      locale: const Locale("en"),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      theme: ThemeData(
+          primaryColor: Color(0xffE42C52),
+          scaffoldBackgroundColor: Colors.white,
+          fontFamily: GoogleFonts.raleway().fontFamily),
+      supportedLocales: S.delegate.supportedLocales,
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: const TextScaler.linear(1.0),
+        ),
+        child: child!,
+      ),
+      routerConfig: AppRouter.router,
     );
   }
 }
