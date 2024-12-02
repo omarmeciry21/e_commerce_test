@@ -1,16 +1,30 @@
-# e_commerce_test
+# How to Run a Flutter App
 
-A new Flutter project.
+## Demo Video
 
-## Getting Started
+You can view the demo video by clicking the link below:
 
-This project is a starting point for a Flutter application.
+[Watch the Demo Video](./path_to_video/demo_video.mkv)
 
-A few resources to get you started if this is your first Flutter project:
+Alternatively, you can use the HTML `<video>` tag if your markdown parser allows HTML rendering (e.g., GitHub, GitLab):
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<video width="600" controls>
+  <source src="./path_to_video/demo_video.mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Prerequisites
+
+Before running a Flutter app, ensure you have the following installed on your machine:
+
+- **Flutter SDK**: You can download and install Flutter from the official website: [Flutter Install](https://flutter.dev/docs/get-started/install).
+- **Android Studio**: Flutter uses Android Studio for creating Android apps. You can download it from [Android Studio](https://developer.android.com/studio).
+- **Xcode**: For iOS development (macOS only). Download it from the App Store.
+- **Visual Studio Code** (optional): A code editor that can be used to write and run Flutter apps.
+
+You can check if Flutter is properly installed by running:
+
+```bash
+flutter doctor
