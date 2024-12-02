@@ -1,8 +1,10 @@
+import 'package:e_commerce_test/core/cubit/language_cubit.dart';
 import 'package:e_commerce_test/core/utils/app_box_shadows.dart';
 import 'package:e_commerce_test/generated/l10n.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_test/features/orders/data/models/order_models.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart'; // To format the date
 
@@ -59,12 +61,19 @@ class OrderStatsLineChart extends StatelessWidget {
       ),
       child: LineChart(
         LineChartData(
-          gridData: FlGridData(show: true),
+          gridData: const FlGridData(show: true),
           titlesData: FlTitlesData(
             show: true,
-            leftTitles: AxisTitles(
-                sideTitles: SideTitles(showTitles: true, reservedSize: 32),
-                axisNameWidget: Text(S.of(context).totalOrders)),
+            leftTitles: context
+                        .read<LanguageCubit>()
+                        .languageCode
+                        .toLowerCase() ==
+                    "en"
+                ? AxisTitles(
+                    sideTitles:
+                        const SideTitles(showTitles: true, reservedSize: 32),
+                    axisNameWidget: Text(S.of(context).totalOrders))
+                : const AxisTitles(sideTitles: SideTitles(showTitles: false)),
             bottomTitles: AxisTitles(
               axisNameWidget: Text(S.of(context).date),
               sideTitles: SideTitles(
@@ -76,16 +85,26 @@ class OrderStatsLineChart extends StatelessWidget {
                     return Text(
                       getDateLabel(
                           dateString, value.toInt()), // Show every 5th date
-                      style: TextStyle(color: Colors.black, fontSize: 10),
+                      style: const TextStyle(color: Colors.black, fontSize: 10),
                     );
                   }
-                  return SizedBox(); // Return an empty widget if index is out of range
+                  return const SizedBox(); // Return an empty widget if index is out of range
                 },
               ),
             ),
             // Hide top and right titles
-            topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-            rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            topTitles:
+                const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            rightTitles: context
+                        .read<LanguageCubit>()
+                        .languageCode
+                        .toLowerCase() ==
+                    "ar"
+                ? AxisTitles(
+                    sideTitles:
+                        const SideTitles(showTitles: true, reservedSize: 32),
+                    axisNameWidget: Text(S.of(context).totalOrders))
+                : const AxisTitles(sideTitles: SideTitles(showTitles: false)),
           ),
           borderData: FlBorderData(show: false), // Remove chart borders
           lineBarsData: [
@@ -94,7 +113,7 @@ class OrderStatsLineChart extends StatelessWidget {
               // isCurved: true,
               color: Theme.of(context).primaryColor,
               belowBarData: BarAreaData(show: false),
-              dotData: FlDotData(show: false),
+              dotData: const FlDotData(show: false),
             ),
           ],
         ),

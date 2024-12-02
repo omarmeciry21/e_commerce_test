@@ -123,3 +123,12 @@ flutter_assets:
   assets_path: assets/
   output_path: lib/generated/
   filename: assets.dart
+
+flutter_native_splash:
+  image: assets/images/app_logo.png
+  color: "#E42C52"
+  android: true
+  ios: true
+  android_12:
+    image: assets/images/app_logo.png
+    color: "#E42C52"
